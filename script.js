@@ -8,22 +8,17 @@ function fetchas(){
         fetch(links[i])
             .then((res) => res.json())
             .then((data) => {
-                // let arr =[];
-                // console.log(data.photos.camera)
-
-                // for(let key in data.photos){
-                //     for(let key in arr){
-                //         if(key!=data.photos[key].camera.name && arr.length == key)
-                //     } 
-                // }
+                let arr =[];
                 let div = document.createElement("div")
                 let img = document.createElement("img");
                 let h3 = document.createElement("h3");
                 let h3_2 = document.createElement("h3");
                 img.src = data.photos[0].img_src;
                 h3.innerText = data.photos[0].rover.landing_date
+                h3_2.innerText = "8";
                 div.appendChild(img)
                 div.appendChild(h3)
+                div.appendChild(h3_2)
                 main.appendChild(div)
             })
     }   
